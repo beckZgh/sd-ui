@@ -1,0 +1,39 @@
+
+/* 浏览器滚动条承载在html上 */
+html { overflow: hidden; }
+
+/*设置页面整体高度*/
+html, body, #app { height: 100%;  }
+
+/*设置默认值*/
+body{
+	width: 100%;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+	font-size: 14px;
+	color: #1f2d3d;
+	min-width: 1200px;
+	padding-right: 0!important;
+}
+
+/*重置块状元素 内外边距,边框及轮廓*/
+body,div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li,
+header, menu, aside, section, footer {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: lighter;       /*继承*/
+}
+
+/*重置列表项目图片*/
+ul,ol{
+	list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*重置表单*/
+input,textarea,select,button{
+	outline: none;
+}

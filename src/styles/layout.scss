@@ -1,0 +1,143 @@
+
+.app-wrapper {
+    height: 100%;
+}
+
+.app-logo {
+    width: $sideBarWidth;
+    line-height: $headerHeight;
+    color: #bfcbd9;
+    text-align: center;
+    font-size: 23px;
+    cursor: pointer;
+}
+//----------------------------------------------------------------
+
+.app-aside {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    z-index: 20;
+    width: $sideBarWidth;
+    background: $menuBg;
+    transition: width .28s;
+
+    /* 滚动容器  */
+    .el-scrollbar__view {
+        padding-bottom: 350px;
+    }
+
+    /* 侧边栏外链样式 */
+    a {
+        display: inline-block;
+        width: 100%;
+        text-decoration: none;
+        color: #2d8cf0;
+        overflow: hidden;
+    }
+
+    /* 侧边栏icon图标 */
+    .svg-icon {
+        margin-right: 16px;
+    }
+
+    /* 重置部分 el-menu 样式 */
+    .el-menu {
+        width: 100%!important;
+        height: 100%;
+        font-size: 0;
+        border: none;
+    }
+
+    // 设置标题，鼠标指向颜色
+    .submenu-title-noDropdown, // root menu 无子元素添加的class
+    .submenu__title {
+        &:hover {
+            background-color: $menuHover !important;
+        }
+    }
+
+    // 嵌套元素,改变背景色
+    .nest-menu .el-submenu > .el-submenu__title,
+    .el-submenu .el-menu-item {
+        min-width: $sideBarWidth !important;
+        background-color: $subMenuBg !important;
+
+        &:hover {
+            background-color: $subMenuHover !important;
+        }
+    }
+
+}
+
+//----------------------------------------------------------------
+
+.app-main {
+    margin-left: $sideBarWidth;
+    box-sizing: border-box;
+    height: 100%;
+    transition: margin-left .28s;
+
+    &_view {
+        height: calc(100% - 50px)!important;
+        overflow-y: auto;
+    }
+}
+
+//----------------------------------------------------------------
+
+/* 侧边栏收拢 */
+.is-collapse {
+    .app-aside,
+    .app-logo {
+        width: $collapseWidth;
+    }
+    .app-logo {
+        font-size: 28px;
+    }
+    .app-main {
+        margin-left: $collapseWidth;
+    }
+    .svg-icon {
+        margin-right: 0;
+    }
+
+    /* root 无嵌套元素title */
+    .submenu-title-noDropdown {
+        position: relative;
+        padding: 0!important;
+
+        .el-tooltip {
+            padding: 0!important;
+
+            .svg-icon {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    // 隐藏嵌套元素
+    .el-submenu {
+        overflow: hidden;
+
+        & > .el-submenu__title {
+            padding: 0!important;
+
+            .svg-icon {
+                margin-left: 20px;
+            }
+        }
+
+        .el-submenu__icon-arrow {
+            display: none;
+        }
+    }
+
+    /* 隐藏文字 */
+    .el-menu--collapse .el-submenu > .el-submenu__title > span {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+}

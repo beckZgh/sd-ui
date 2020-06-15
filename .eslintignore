@@ -1,0 +1,5 @@
+/docs
+/tests/e2e/
+styleguide.config.js
+apidoc.json
+webpack.vendor.dll.js

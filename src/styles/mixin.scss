@@ -1,0 +1,116 @@
+// ==========================================================================
+// 外部使用
+// ==========================================================================
+
+// 背景图
+@mixin bg($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// 宽高
+@mixin wh($width, $height){
+  width: $width;
+  height: $height;
+}
+
+// 字体大小,颜色
+@mixin sc($size, $color){
+  font-size: $size;
+  color: $color;
+}
+
+//字体大小、行高、字体
+@mixin font($size, $line-height, $family: 'Microsoft YaHei') {
+  font: #{$size}/#{$line-height} $family;
+}
+
+@mixin position( $name: 'fixed', $index: 0){
+    position: #{$name};
+    left: 0; right: 0;
+    top : 0; bottom: 0;
+    @if ($index and $index > 0){
+        z-index: #{$index};
+    }
+}
+
+@mixin ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// 弹性盒子流 nowrap | wrap | wrap-reverse;
+@mixin warp($val:'wrap'){
+    flex-wrap: #{$val};
+}
+
+// 弹性盒子(从左至右)
+@mixin flex {
+    display: flex;
+}
+
+// 水平(默认居中)  flex-start | flex-end | center | space-between | space-around;
+@mixin flex-x($x:'center'){
+    @include flex;
+    @include justify($x);
+}
+
+// 垂直(默认居中)  flex-start | flex-end | center | baseline | stretch;
+@mixin flex-y($y:'center'){
+    @include flex;
+    @include algin($y);
+}
+
+// 水平,垂直方向(默认居中)
+@mixin flex-xy($x:'center', $y:'center'){
+    @include flex;
+    @include justify($x);
+    @include algin($y);
+}
+
+//--------------------------------------
+// 弹性盒子(从上至下)
+@mixin flexc{
+    @include flex;
+    @include flexColumn;
+}
+
+// 水平(默认居中)
+@mixin flexc-x($x:'center'){
+    @include flexc;
+    @include algin($x);
+}
+
+// 垂直(默认居中)
+@mixin flexc-y($y:'center'){
+    @include flexc;
+    @include justify($y);
+}
+
+// 水平,垂直方向(默认居中)
+@mixin flexc-xy($x:'center', $y:'center'){
+    @include flexc;
+    @include justify($y);
+    @include algin($x);
+}
+
+@mixin flex-n($n:'1'){
+    flex: #{$n};
+}
+
+// ==========================================================================
+// 内部调用
+// ==========================================================================
+@mixin justify($val){
+  justify-content: #{$val};
+}
+
+@mixin algin($val){
+  align-items: #{$val};
+}
+
+@mixin flexColumn {
+  flex-direction: column;
+}

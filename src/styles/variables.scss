@@ -1,0 +1,60 @@
+
+
+// 主题色
+$color-primary: #409EFF;
+$color-success: #67C23A;
+$color-warning: #E6A23C;
+$color-danger : #F56C6C;
+$color-info   : #909399;
+
+// 文字色
+$color-text-primary     : #303133;
+$color-text-regular     : #606266;
+$color-text-secondary   : #909399;
+$color-text-placeholder : #C0C4CC;
+$color-white            : #FFFFFF;
+$color-black            : #000000;
+
+
+// 背景色
+$bg-color-black: #000;
+$bg-color-white: #FFF;
+$bg-color-none : transparent;
+
+// 边框色
+$color-border-base        : #DCDFE6;
+$color-border-light       : #E4E7ED;
+$color-border-lighter     : #EBEEF5;
+$color-border-extra-light : #F2F6FC;
+
+// 阴影色
+$box-shadow-base    : 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+$box-shadow-shallow : 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+// layout
+$headerHeight  : 50px;
+$sideBarWidth  : 210px;
+$collapseWidth : 54px;
+
+// sidebar
+$menuText          : #bfcbd9;
+$menuActiveText    : #409EFF;
+$subMenuActiveText : #f4f4f5;
+
+$menuBg            : #304156;
+$menuHover         : #263445;
+
+$subMenuBg         : #1f2d3d;
+$subMenuHover      : #001528;
+
+:export {
+    menuText          : $menuText;
+    menuActiveText    : $menuActiveText;
+    subMenuActiveText : $subMenuActiveText;
+
+    menuBg            : $menuBg;
+    menuHover         : $menuHover;
+
+    subMenuBg         : $subMenuBg;
+    subMenuHover      : $subMenuHover;
+}

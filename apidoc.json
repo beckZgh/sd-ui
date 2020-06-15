@@ -1,0 +1,13 @@
+{
+    "name": "Sumdoo_Pos",
+    "version": "1.0.0",
+    "title": "Sumdoo_Cloud",
+    "url": "http://localhost/",
+    "header": {
+        "title": "文档约定",
+        "filename": "./api.readme.md"
+    },
+    "template": {
+        "withGenerator": false
+    }
+}
